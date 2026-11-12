@@ -110,7 +110,7 @@
             this.groupBox1.Size = new System.Drawing.Size(381, 105);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General settings";
+            this.groupBox1.Text = "Extneded General settings";
             // 
             // nudGeneralMinimumNumberOfAreas
             // 
@@ -175,7 +175,19 @@
             "[8] Underwater city",
             "[9] Foggy forest",
             "[10] Bowser in the Dark World",
-            "[11] Bowser in the Sky"});
+            "[11] Bowser in the Sky",
+            "[12] Afternoon Sea Sky",
+            "[13] Unused",
+            "[14] Unused",
+            "[15] Unused",
+            "[16] Unused",
+            "[17] Unused",
+            "[18] Unused",
+            "[19] Unused",
+            "[20] Unused",
+            "[21] Unused",
+            "[22] Unused",
+            "[23] Unused",});
             this.cbxBackground.Location = new System.Drawing.Point(225, 24);
             this.cbxBackground.Name = "cbxBackground";
             this.cbxBackground.Size = new System.Drawing.Size(141, 21);
