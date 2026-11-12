@@ -2,11 +2,11 @@
 
 You can download the latest version from releases section and download the `release.zip`.
 
-Simply unzip the content in a folder, and launch `SM64DSe.exe`.
+Simply unzip the content in a folder, and launch `Extended - Editor.exe`.
 
 # Usage
 
-The SM64DSe editor has 2 usage the traditional through its GUI (Graphical User Interface) or through CLI (Command Line Interface).
+The Extended - editor has 2 usage the traditional through its GUI (Graphical User Interface) or through CLI (Command Line Interface).
 
 ## 🖼️ Graphical User Interface
 
