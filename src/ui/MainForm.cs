@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,7 @@ namespace SM64DSe
                 while (Program.m_LevelEditors.Count > 0)
                     Program.m_LevelEditors[0].Close();
 
-                
+
                 Program.m_ROM.EndRW();
             }
 
@@ -58,7 +59,7 @@ namespace SM64DSe
             {
                 MessageBox.Show("Your ROM path contains white spaces. This can cause some issues.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
             Program.m_IsROMFolder = false;
             Program.m_ROMPath = filename;
             try { Program.m_ROM = new NitroROM(Program.m_ROMPath); }
@@ -114,10 +115,10 @@ namespace SM64DSe
                 catch (Exception ex)
                 {
                     MessageBox.Show(
-                        "An error occured while patching your ROM.\n" + 
-                        "No changes have been made to your ROM.\n" + 
-                        "Try using a different ROM.\n\n" + 
-                        ex.Message + "\n" + 
+                        "An error occured while patching your ROM.\n" +
+                        "No changes have been made to your ROM.\n" +
+                        "Try using a different ROM.\n\n" +
+                        ex.Message + "\n" +
                         ex.StackTrace,
                         Program.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex.StackTrace);
@@ -152,11 +153,11 @@ namespace SM64DSe
             btnMore.Enabled = true;
             extractROMButton.Visible = true;
             btnBuildROM.Visible = false;
-            
+
             // Show run button if emulator executable is defined
             string executable = Properties.Settings.Default.EmulatorExecutablePath;
             btnRunROM.Visible = executable != null && executable.Trim() != "";
-            
+
             btnLZCompressWithHeader.Enabled = true;
             btnLZDecompressWithHeader.Enabled = true;
             btnLZForceCompression.Enabled = true;
@@ -198,7 +199,7 @@ namespace SM64DSe
             btnLZDecompressWithHeader.Enabled = false;
             btnLZForceCompression.Enabled = false;
             btnLZForceDecompression.Enabled = false;
-            
+
             RefreshAddonsButton();
         }
 
@@ -208,7 +209,7 @@ namespace SM64DSe
         {
             InitializeComponent();
             SetupAddons();
-            
+
             Text = Program.AppTitle + " " + Program.AppVersion + " " + Program.AppDate;
             Program.m_ROMPath = "";
             Program.m_LevelEditors = new List<LevelEditorForm>();
@@ -217,7 +218,7 @@ namespace SM64DSe
 
             ObjectDatabase.Initialize();
             slStatusLabel.Text = "Ready";
-            
+
             Task.Run(() =>
             {
                 try
@@ -233,7 +234,7 @@ namespace SM64DSe
                 if (nextRelease != null)
                 {
                     this.updateLabel.Visible = true;
-                }   
+                }
             });
 
             if (romPath != null)
@@ -327,7 +328,7 @@ namespace SM64DSe
                 }
             }
 
-           // try
+            // try
             {
                 LevelEditorForm newedit = new LevelEditorForm(Program.m_ROM, levelid);
                 newedit.Show();
@@ -391,9 +392,9 @@ namespace SM64DSe
                 "- BlueXer0: the maker of the fork of Extended Editor - Coding / Assets\n" +
                 "- Treeki: the overlay decompression (Jap77), the object list and other help\n" +
                 "- Dirbaio: other help\n" +
-                "- blank: help with generating collision\n" + 
-                "- HayashiSTL: ASM hacking template v2, file system editor, BCA optimisation, level editor enhancements and other help\n" + 
-                "- Fiachra: ASM hacking template v1, improvements to the BMD and KCL importer/exporter\n" + 
+                "- blank: help with generating collision\n" +
+                "- HayashiSTL: ASM hacking template v2, file system editor, BCA optimisation, level editor enhancements and other help\n" +
+                "- Fiachra: ASM hacking template v1, improvements to the BMD and KCL importer/exporter\n" +
                 "- Gota7: Kuppa Script editor and compiler, overlay editor, SP scripting support, support for extracted ROMs, various improvements to the level editor\n" +
                 "- jupahe64: Improvements to the BMD and KCL importer/exporter, texture animation editor, various other stuff\n" +
                 "- SplattyDS: SPA editor, file and sound header generators, various fixes and improvements\n" +
@@ -735,7 +736,7 @@ namespace SM64DSe
 
         private void bMDKLCEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ROMFileSelect rfs = new ROMFileSelect("Select a BMD or KLC file",new string[] { ".bmd", ".klc" });
+            ROMFileSelect rfs = new ROMFileSelect("Select a BMD or KLC file", new string[] { ".bmd", ".klc" });
             if (rfs.ShowDialog(this) == DialogResult.OK)
             {
                 new BMD_KLC_Editor(rfs.m_SelectedFile).Show();
@@ -880,7 +881,7 @@ namespace SM64DSe
                 MessageBox.Show("This feature is not for extracted ROMs!");
                 return;
             }
-            
+
             if (Program.m_ROM.m_Version != NitroROM.Version.EUR)
             {
                 MessageBox.Show("This is for EUR roms only!");
@@ -892,11 +893,11 @@ namespace SM64DSe
                 MessageBox.Show("Rom has already been patched!");
                 return;
             }
-            
+
             if (MessageBox.Show("This will patch the ROM. " +
                                 "Continue with the patch?", "Table Shifting Patch", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
-            
+
             DLUtils.ApplyDynamicLibraryPatch();
         }
 
@@ -963,7 +964,7 @@ namespace SM64DSe
                 ROMFileSelect.LoadOverlayList(tvARM9Overlays);
 
                 return;
-			}
+            }
 
             //Each line.
             var s = File.ReadAllLines(o.FileName);
@@ -1118,44 +1119,44 @@ namespace SM64DSe
                         oe2.closeButton_Click(null, new EventArgs());
                         break;
 
-                    /*//Add file, replace file if it already exists
-                    case "add_or_replace_file":
-                        if (Program.m_ROM.m_Version != NitroROM.Version.EUR)
-                        {
-                            MessageBox.Show("This is for EUR ROMs only!");
-                            continue;
-                        }
+                        /*//Add file, replace file if it already exists
+                        case "add_or_replace_file":
+                            if (Program.m_ROM.m_Version != NitroROM.Version.EUR)
+                            {
+                                MessageBox.Show("This is for EUR ROMs only!");
+                                continue;
+                            }
 
-                        byte[] data = File.ReadAllBytes(basePath + p[3]);
+                            byte[] data = File.ReadAllBytes(basePath + p[3]);
 
-                        if (Program.m_ROM.FileExists(p[1] + p[2]))
-                        {
-                            Program.m_ROM.ReinsertFile(Program.m_ROM.GetFileIDFromName(p[1] + p[2]), data);
-                        }
-                        else
-                        {
-                            Program.m_ROM.StartFilesystemEdit();
-                            Program.m_ROM.AddFile(p[1], p[2], data, tvFileList.Nodes[0]);
-                            Program.m_ROM.SaveFilesystem();
-                        }
+                            if (Program.m_ROM.FileExists(p[1] + p[2]))
+                            {
+                                Program.m_ROM.ReinsertFile(Program.m_ROM.GetFileIDFromName(p[1] + p[2]), data);
+                            }
+                            else
+                            {
+                                Program.m_ROM.StartFilesystemEdit();
+                                Program.m_ROM.AddFile(p[1], p[2], data, tvFileList.Nodes[0]);
+                                Program.m_ROM.SaveFilesystem();
+                            }
 
-                        break;
-
-                    //Add directory, if it doesn't exist
-                    case "add_dir":
-
-                        Program.m_ROM.StartFilesystemEdit();
-
-                        if (Program.m_ROM.GetDirIDFromName(p[1] + p[2]) != 0)
-						{
-                            Console.WriteLine("Directory\n" + p[1] + p[2] + "\nalready exists.");
                             break;
-                        }
-                        
-                        Program.m_ROM.AddDir(p[1], p[2], tvFileList.Nodes[0]);
-                        Program.m_ROM.SaveFilesystem();
 
-                        break;*/
+                        //Add directory, if it doesn't exist
+                        case "add_dir":
+
+                            Program.m_ROM.StartFilesystemEdit();
+
+                            if (Program.m_ROM.GetDirIDFromName(p[1] + p[2]) != 0)
+                            {
+                                Console.WriteLine("Directory\n" + p[1] + p[2] + "\nalready exists.");
+                                break;
+                            }
+
+                            Program.m_ROM.AddDir(p[1], p[2], tvFileList.Nodes[0]);
+                            Program.m_ROM.SaveFilesystem();
+
+                            break;*/
                 }
             }
         }
@@ -1225,7 +1226,7 @@ namespace SM64DSe
         string m_SavedFile = null;
 
         private void btnOpenFile_Click(object sender, EventArgs e)
-		{
+        {
             // Console.WriteLine("Trying to open: " + m_SelectedFile);
 
             if (m_SelectedFile.EndsWith(".bmd"))
@@ -1310,7 +1311,7 @@ namespace SM64DSe
             }
         }
 
-		private void fileHeaderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fileHeaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog o = new SaveFileDialog();
             o.FileName = "FileList.h";
@@ -1322,7 +1323,7 @@ namespace SM64DSe
             FileHeaderGenerator.Generate(o.FileName);
         }
 
-		private void soundHeaderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void soundHeaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog o = new SaveFileDialog();
             o.FileName = "SoundList.h";
@@ -1343,14 +1344,14 @@ namespace SM64DSe
         {
             // Set online as default
             this.addonsChoice.SelectedIndex = 0;
-            
+
             // init image list
             addons_image_list.Images.Clear();
             addons_image_list.Images.Add(Properties.Resources.cloud);
             addons_image_list.Images.Add(Properties.Resources.brick);
             addons_image_list.Images.Add(Properties.Resources.question);
             addons_image_list.ImageSize = new Size(32, 32);
-            
+
             // Default to addons
             ShowOnlineAddons();
             addonsList_Resize(null, null);
@@ -1359,7 +1360,7 @@ namespace SM64DSe
             RefreshAddonsButton();
         }
 
-        private void addonsList_Resize(object sender,  EventArgs e)
+        private void addonsList_Resize(object sender, EventArgs e)
         {
             if (this.addons_list.Width < 5)
                 return;
@@ -1370,7 +1371,7 @@ namespace SM64DSe
         {
             // clear any existing items
             addons_list.Items.Clear();
-            
+
             this._addonObjects = AddonsManager.GetInstance().GetAddons();
             Log.Debug($"Found {this._addonObjects.Count} addons.");
             foreach (AddonObject addonObject in this._addonObjects)
@@ -1386,7 +1387,7 @@ namespace SM64DSe
         {
             // clear any existing items
             addons_list.Items.Clear();
-            
+
             this._localAddons = AddonsManager.GetInstance().GetLocalAddons();
             Log.Debug($"Found {this._localAddons.Count} local addons.");
             foreach (LocalAddon addonObject in this._localAddons)
@@ -1401,13 +1402,13 @@ namespace SM64DSe
                     // unknown addon
                     item = new ListViewItem(addonObject.Path, 2);
                 }
-                
+
                 item.SubItems.Add($"{addonObject.Versions.Length} versions on your system.");
                 addons_list.Items.Add(item);
             }
         }
-        
-        
+
+
         private void addonsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshAddonsButton();
@@ -1437,7 +1438,7 @@ namespace SM64DSe
                 this.btn_open_github.Visible = true;
 
                 this.btnInstall.Visible = false;
-                
+
                 if (this.addons_list.SelectedItems.Count == 1)
                 {
                     this.btn_open_github.Enabled = true;
@@ -1457,7 +1458,7 @@ namespace SM64DSe
                 this.btn_open_github.Visible = false;
 
                 this.btnInstall.Visible = true;
-                
+
                 if (this.addons_list.SelectedItems.Count == 1)
                 {
                     this.btnInstall.Enabled = true;
@@ -1478,12 +1479,12 @@ namespace SM64DSe
                 this.addons_list.Visible = true;
                 this.addonsWarning.Visible = false;
             }
-            
+
             // If the rom is null - do not allow to switch from online to local
             if (Program.m_ROM == null || Program.m_IsROMFolder || Program.m_ROM.m_Version != NitroROM.Version.EUR)
             {
                 this.addonsChoice.Enabled = false;
-                this.btnDownloadAddon.Enabled = false;  
+                this.btnDownloadAddon.Enabled = false;
                 this.btnInstall.Enabled = false;
             }
             else
@@ -1519,7 +1520,7 @@ namespace SM64DSe
             {
                 spbStatusProgress.Visible = false;
             }
-            
+
             if (releases == null || releases.Count == 0)
             {
                 MessageBox.Show($"No releases found for repository {o.Repository}.", "Error");
@@ -1539,7 +1540,7 @@ namespace SM64DSe
                     }
                     versions.Add(name);
                 }
-            
+
                 DropdownDialog dialog = new DropdownDialog($"Select a version for {o.Name} to download", versions.ToArray(), 0);
                 dialog.ShowDialog();
                 selected = dialog.GetSelected();
@@ -1547,7 +1548,7 @@ namespace SM64DSe
                     return; // cancel
                 Log.Debug($"User selected version index {selected}");
             }
-            
+
             Log.Debug($"Downloading version {releases[selected].Name}");
             AddonsManager.GetInstance().DownloadAndExtract(o, releases[selected]);
             MessageBox.Show(
@@ -1559,7 +1560,7 @@ namespace SM64DSe
         {
             if (this.addons_list.SelectedItems.Count != 1)
                 throw new Exception("SelectedItems not valid");
-            
+
             int selected = this.addons_list.SelectedItems[0].Index;
             if (objects.Count < selected)
             {
@@ -1587,7 +1588,7 @@ namespace SM64DSe
             }
 
             int selected = 0;
-            string name = (o.Parent != null)?o.Parent.Name:o.Path;
+            string name = (o.Parent != null) ? o.Parent.Name : o.Path;
             // If we have more than one version we should ask the user which one he wants to install
             if (o.Versions.Length > 1)
             {
@@ -1598,7 +1599,7 @@ namespace SM64DSe
                     return; // cancel
                 Log.Debug($"User selected version index {selected}");
             }
-            
+
             DialogResult res = MessageBox.Show(
                 $"Are you sure you want to install the addon {name}, this could corrupt your ROM, act carefully.",
                 "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -1608,21 +1609,21 @@ namespace SM64DSe
                 Log.Debug("Addon installation cancelled.");
                 return;
             }
-            
+
             AddonsManager.GetInstance().PerformInstall(o, selected);
             Log.Information("Installation finished.");
-            
+
             Log.Debug("Reloading filesystem.");
             this.tvFileList.Nodes.Clear();
             ROMFileSelect.LoadFileList(this.tvFileList);
-            
+
             // Show the user that it has been installed
             MessageBox.Show($"The addon {name} has been installed properly.");
         }
 
         private void btnOpenAddonFolder_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe",AddonsManager.GetInstance().GetAddonsFolder());
+            System.Diagnostics.Process.Start("explorer.exe", AddonsManager.GetInstance().GetAddonsFolder());
         }
 
         private void btnRefreshAddons_Click(object sender, EventArgs e)
@@ -1640,8 +1641,57 @@ namespace SM64DSe
 
             if (result != DialogResult.OK)
                 return;
-            
+
             System.Diagnostics.Process.Start(nextRelease.HtmlUrl);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Compile_Click(object sender, EventArgs e)
+        {
+
+        }
+            class PatchCompiler
+        {
+
+            public static int Compile_Click(uint destAddr, DirectoryInfo romDir)
+            {
+                return runProcess("make CODEADDR=0x" + destAddr.ToString("X8"), romDir.FullName);
+            }
+
+            public static int runProcess(string proc, string cwd)
+            {
+                ProcessStartInfo info = new ProcessStartInfo();
+                info.FileName = "cmd";
+                info.Arguments = "/C " + proc + " || pause";
+                info.CreateNoWindow = false;
+                info.UseShellExecute = false;
+                info.WorkingDirectory = cwd;
+
+                Process p = Process.Start(info);
+                p.WaitForExit();
+                return p.ExitCode;
+            }
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

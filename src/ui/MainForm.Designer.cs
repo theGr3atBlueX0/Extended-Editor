@@ -1,4 +1,6 @@
-﻿namespace SM64DSe
+﻿using System;
+
+namespace SM64DSe
 {
     partial class MainForm
     {
@@ -117,7 +119,29 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addons_image_list = new System.Windows.Forms.ImageList(this.components);
             this.btnRefreshAddons = new System.Windows.Forms.Button();
+            this.Code_Patcher = new System.Windows.Forms.TabPage();
+            this.Clean_DLs = new System.Windows.Forms.Button();
+            this.Compile_DLs = new System.Windows.Forms.Button();
+            this.Code_Injection = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.DL_Patcher = new System.Windows.Forms.TabPage();
+            this.ASM_Patcher = new System.Windows.Forms.TabPage();
+            this.Clean = new System.Windows.Forms.Button();
+            this.Compile = new System.Windows.Forms.Button();
+            this.Overlay_Editor = new System.Windows.Forms.TabPage();
+            this.Overlay_Viewer = new System.Windows.Forms.GroupBox();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.Overlay9_7 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.castle00 = new System.Windows.Forms.TabPage();
+            this.file_menu = new System.Windows.Forms.TabPage();
+            this.Overlay9_3 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.title_demo = new System.Windows.Forms.TabPage();
+            this.title_demo_main = new System.Windows.Forms.TabPage();
             this.tsToolBar.SuspendLayout();
             this.ssStatusBar.SuspendLayout();
             this.tbcMainFormTabControl.SuspendLayout();
@@ -138,6 +162,15 @@
             this.spcARM9Overlays.Panel2.SuspendLayout();
             this.spcARM9Overlays.SuspendLayout();
             this.addons.SuspendLayout();
+            this.Code_Patcher.SuspendLayout();
+            this.Code_Injection.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.Overlay_Editor.SuspendLayout();
+            this.Overlay_Viewer.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.Overlay9_7.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsToolBar
@@ -592,7 +625,8 @@
             this.tbcMainFormTabControl.Controls.Add(this.tbpFileSystem);
             this.tbcMainFormTabControl.Controls.Add(this.tbpARM9Overlays);
             this.tbcMainFormTabControl.Controls.Add(this.addons);
-            this.tbcMainFormTabControl.Controls.Add(this.tabPage2);
+            this.tbcMainFormTabControl.Controls.Add(this.Code_Patcher);
+            this.tbcMainFormTabControl.Controls.Add(this.Overlay_Editor);
             this.tbcMainFormTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcMainFormTabControl.Location = new System.Drawing.Point(0, 25);
             this.tbcMainFormTabControl.Name = "tbcMainFormTabControl";
@@ -606,7 +640,7 @@
             this.tbpLevels.Location = new System.Drawing.Point(4, 22);
             this.tbpLevels.Name = "tbpLevels";
             this.tbpLevels.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpLevels.Size = new System.Drawing.Size(568, 439);
+            this.tbpLevels.Size = new System.Drawing.Size(568, 392);
             this.tbpLevels.TabIndex = 0;
             this.tbpLevels.Text = "Levels";
             this.tbpLevels.UseVisualStyleBackColor = true;
@@ -631,8 +665,8 @@
             this.splitContainerLevels.Panel2.Controls.Add(this.btnEditCollisionMap);
             this.splitContainerLevels.Panel2.Controls.Add(this.btnEditLevel);
             this.splitContainerLevels.Panel2.Controls.Add(this.btnEditLevelList);
-            this.splitContainerLevels.Size = new System.Drawing.Size(562, 433);
-            this.splitContainerLevels.SplitterDistance = 404;
+            this.splitContainerLevels.Size = new System.Drawing.Size(562, 386);
+            this.splitContainerLevels.SplitterDistance = 357;
             this.splitContainerLevels.TabIndex = 0;
             // 
             // btnRefresh
@@ -678,7 +712,7 @@
             this.lbxLevels.Location = new System.Drawing.Point(0, 24);
             this.lbxLevels.Margin = new System.Windows.Forms.Padding(0);
             this.lbxLevels.Name = "lbxLevels";
-            this.lbxLevels.Size = new System.Drawing.Size(557, 380);
+            this.lbxLevels.Size = new System.Drawing.Size(557, 333);
             this.lbxLevels.TabIndex = 2;
             this.lbxLevels.SelectedIndexChanged += new System.EventHandler(this.lbxLevels_SelectedIndexChanged);
             this.lbxLevels.DoubleClick += new System.EventHandler(this.lbxLevels_DoubleClick);
@@ -722,7 +756,7 @@
             this.tbpFileSystem.Location = new System.Drawing.Point(4, 22);
             this.tbpFileSystem.Name = "tbpFileSystem";
             this.tbpFileSystem.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpFileSystem.Size = new System.Drawing.Size(568, 439);
+            this.tbpFileSystem.Size = new System.Drawing.Size(568, 392);
             this.tbpFileSystem.TabIndex = 1;
             this.tbpFileSystem.Text = "File System";
             this.tbpFileSystem.UseVisualStyleBackColor = true;
@@ -743,8 +777,8 @@
             // spcFileSystemTab.Panel2
             // 
             this.spcFileSystemTab.Panel2.Controls.Add(this.pnlFileOptions);
-            this.spcFileSystemTab.Size = new System.Drawing.Size(562, 433);
-            this.spcFileSystemTab.SplitterDistance = 377;
+            this.spcFileSystemTab.Size = new System.Drawing.Size(562, 386);
+            this.spcFileSystemTab.SplitterDistance = 330;
             this.spcFileSystemTab.TabIndex = 2;
             // 
             // tvFileList
@@ -752,7 +786,7 @@
             this.tvFileList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvFileList.Location = new System.Drawing.Point(0, 0);
             this.tvFileList.Name = "tvFileList";
-            this.tvFileList.Size = new System.Drawing.Size(562, 377);
+            this.tvFileList.Size = new System.Drawing.Size(562, 330);
             this.tvFileList.TabIndex = 0;
             this.tvFileList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvFileList_AfterSelect);
             this.tvFileList.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvFileList_NodeMouseDoubleClick);
@@ -849,7 +883,7 @@
             this.tbpARM9Overlays.Location = new System.Drawing.Point(4, 22);
             this.tbpARM9Overlays.Name = "tbpARM9Overlays";
             this.tbpARM9Overlays.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpARM9Overlays.Size = new System.Drawing.Size(568, 439);
+            this.tbpARM9Overlays.Size = new System.Drawing.Size(568, 392);
             this.tbpARM9Overlays.TabIndex = 2;
             this.tbpARM9Overlays.Text = "ARM 9 Overlays";
             this.tbpARM9Overlays.UseVisualStyleBackColor = true;
@@ -872,8 +906,8 @@
             this.spcARM9Overlays.Panel2.Controls.Add(this.btnReplaceOverlay);
             this.spcARM9Overlays.Panel2.Controls.Add(this.btnExtractOverlay);
             this.spcARM9Overlays.Panel2.Controls.Add(this.btnDecompressOverlay);
-            this.spcARM9Overlays.Size = new System.Drawing.Size(562, 433);
-            this.spcARM9Overlays.SplitterDistance = 402;
+            this.spcARM9Overlays.Size = new System.Drawing.Size(562, 386);
+            this.spcARM9Overlays.SplitterDistance = 355;
             this.spcARM9Overlays.TabIndex = 0;
             // 
             // tvARM9Overlays
@@ -881,7 +915,7 @@
             this.tvARM9Overlays.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvARM9Overlays.Location = new System.Drawing.Point(0, 0);
             this.tvARM9Overlays.Name = "tvARM9Overlays";
-            this.tvARM9Overlays.Size = new System.Drawing.Size(562, 402);
+            this.tvARM9Overlays.Size = new System.Drawing.Size(562, 355);
             this.tvARM9Overlays.TabIndex = 0;
             this.tvARM9Overlays.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvARM9Overlays_AfterSelect);
             // 
@@ -927,7 +961,7 @@
             this.addons.Location = new System.Drawing.Point(4, 22);
             this.addons.Name = "addons";
             this.addons.Padding = new System.Windows.Forms.Padding(3);
-            this.addons.Size = new System.Drawing.Size(568, 439);
+            this.addons.Size = new System.Drawing.Size(568, 392);
             this.addons.TabIndex = 3;
             this.addons.Text = "🧩 addons";
             this.addons.UseVisualStyleBackColor = true;
@@ -1067,27 +1101,257 @@
             this.btnRefreshAddons.UseVisualStyleBackColor = true;
             this.btnRefreshAddons.Click += new System.EventHandler(this.btnRefreshAddons_Click);
             // 
+            // Code_Patcher
+            // 
+            this.Code_Patcher.Controls.Add(this.Clean_DLs);
+            this.Code_Patcher.Controls.Add(this.Compile_DLs);
+            this.Code_Patcher.Controls.Add(this.Code_Injection);
+            this.Code_Patcher.Controls.Add(this.Clean);
+            this.Code_Patcher.Controls.Add(this.Compile);
+            this.Code_Patcher.Location = new System.Drawing.Point(4, 22);
+            this.Code_Patcher.Name = "Code_Patcher";
+            this.Code_Patcher.Padding = new System.Windows.Forms.Padding(3);
+            this.Code_Patcher.Size = new System.Drawing.Size(568, 392);
+            this.Code_Patcher.TabIndex = 4;
+            this.Code_Patcher.Text = "Code Patcher";
+            this.Code_Patcher.UseVisualStyleBackColor = true;
+            // 
+            // Clean_DLs
+            // 
+            this.Clean_DLs.Location = new System.Drawing.Point(399, 357);
+            this.Clean_DLs.Name = "Clean_DLs";
+            this.Clean_DLs.Size = new System.Drawing.Size(151, 29);
+            this.Clean_DLs.TabIndex = 4;
+            this.Clean_DLs.Text = "Clean DLs";
+            this.Clean_DLs.UseVisualStyleBackColor = true;
+            // 
+            // Compile_DLs
+            // 
+            this.Compile_DLs.Location = new System.Drawing.Point(399, 330);
+            this.Compile_DLs.Name = "Compile_DLs";
+            this.Compile_DLs.Size = new System.Drawing.Size(151, 29);
+            this.Compile_DLs.TabIndex = 3;
+            this.Compile_DLs.Text = "Compile DLs";
+            this.Compile_DLs.UseVisualStyleBackColor = true;
+            // 
+            // Code_Injection
+            // 
+            this.Code_Injection.Controls.Add(this.tabControl1);
+            this.Code_Injection.Location = new System.Drawing.Point(6, 0);
+            this.Code_Injection.Name = "Code_Injection";
+            this.Code_Injection.Size = new System.Drawing.Size(559, 324);
+            this.Code_Injection.TabIndex = 2;
+            this.Code_Injection.TabStop = false;
+            this.Code_Injection.Text = "Code Injection";
+            this.Code_Injection.Enter += new System.EventHandler(this.Code_Injection_Enter);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.DL_Patcher);
+            this.tabControl1.Controls.Add(this.ASM_Patcher);
+            this.tabControl1.Location = new System.Drawing.Point(9, 21);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(539, 291);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // DL_Patcher
+            // 
+            this.DL_Patcher.Location = new System.Drawing.Point(4, 22);
+            this.DL_Patcher.Name = "DL_Patcher";
+            this.DL_Patcher.Padding = new System.Windows.Forms.Padding(3);
+            this.DL_Patcher.Size = new System.Drawing.Size(531, 265);
+            this.DL_Patcher.TabIndex = 0;
+            this.DL_Patcher.Text = "DL Patcher";
+            this.DL_Patcher.UseVisualStyleBackColor = true;
+            // 
+            // ASM_Patcher
+            // 
+            this.ASM_Patcher.Location = new System.Drawing.Point(4, 22);
+            this.ASM_Patcher.Name = "ASM_Patcher";
+            this.ASM_Patcher.Padding = new System.Windows.Forms.Padding(3);
+            this.ASM_Patcher.Size = new System.Drawing.Size(531, 265);
+            this.ASM_Patcher.TabIndex = 1;
+            this.ASM_Patcher.Text = "ASM Patcher";
+            this.ASM_Patcher.UseVisualStyleBackColor = true;
+            // 
+            // Clean
+            // 
+            this.Clean.Location = new System.Drawing.Point(178, 330);
+            this.Clean.Name = "Clean";
+            this.Clean.Size = new System.Drawing.Size(164, 56);
+            this.Clean.TabIndex = 1;
+            this.Clean.Text = "Clean";
+            this.Clean.UseVisualStyleBackColor = true;
+            // 
+            // Compile
+            // 
+            this.Compile.Location = new System.Drawing.Point(8, 330);
+            this.Compile.Name = "Compile";
+            this.Compile.Size = new System.Drawing.Size(164, 56);
+            this.Compile.TabIndex = 0;
+            this.Compile.Text = "Compile";
+            this.Compile.UseVisualStyleBackColor = true;
+            this.Compile.Click += new System.EventHandler(this.Compile_Click);
+            // 
+            // Overlay_Editor
+            // 
+            this.Overlay_Editor.Controls.Add(this.Overlay_Viewer);
+            this.Overlay_Editor.Controls.Add(this.tabControl2);
+            this.Overlay_Editor.Location = new System.Drawing.Point(4, 22);
+            this.Overlay_Editor.Name = "Overlay_Editor";
+            this.Overlay_Editor.Padding = new System.Windows.Forms.Padding(3);
+            this.Overlay_Editor.Size = new System.Drawing.Size(568, 392);
+            this.Overlay_Editor.TabIndex = 5;
+            this.Overlay_Editor.Text = "Overlay Editor";
+            this.Overlay_Editor.UseVisualStyleBackColor = true;
+            // 
+            // Overlay_Viewer
+            // 
+            this.Overlay_Viewer.Controls.Add(this.tabControl3);
+            this.Overlay_Viewer.Location = new System.Drawing.Point(0, 0);
+            this.Overlay_Viewer.Name = "Overlay_Viewer";
+            this.Overlay_Viewer.Size = new System.Drawing.Size(568, 313);
+            this.Overlay_Viewer.TabIndex = 1;
+            this.Overlay_Viewer.TabStop = false;
+            this.Overlay_Viewer.Text = "Overlay Viewer";
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.Overlay9_7);
+            this.tabControl3.Controls.Add(this.Overlay9_3);
+            this.tabControl3.Location = new System.Drawing.Point(8, 19);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(552, 294);
+            this.tabControl3.TabIndex = 0;
+            // 
+            // Overlay9_7
+            // 
+            this.Overlay9_7.Controls.Add(this.tabControl4);
+            this.Overlay9_7.Location = new System.Drawing.Point(4, 22);
+            this.Overlay9_7.Name = "Overlay9_7";
+            this.Overlay9_7.Padding = new System.Windows.Forms.Padding(3);
+            this.Overlay9_7.Size = new System.Drawing.Size(544, 268);
+            this.Overlay9_7.TabIndex = 0;
+            this.Overlay9_7.Text = "Overlay9-7";
+            this.Overlay9_7.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.castle00);
+            this.tabControl4.Controls.Add(this.file_menu);
+            this.tabControl4.Controls.Add(this.title_demo);
+            this.tabControl4.Controls.Add(this.title_demo_main);
+            this.tabControl4.Location = new System.Drawing.Point(6, 6);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(535, 256);
+            this.tabControl4.TabIndex = 0;
+            // 
+            // castle00
+            // 
+            this.castle00.Location = new System.Drawing.Point(4, 22);
+            this.castle00.Name = "castle00";
+            this.castle00.Padding = new System.Windows.Forms.Padding(3);
+            this.castle00.Size = new System.Drawing.Size(527, 230);
+            this.castle00.TabIndex = 0;
+            this.castle00.Text = "castle00";
+            this.castle00.UseVisualStyleBackColor = true;
+            // 
+            // file_menu
+            // 
+            this.file_menu.Location = new System.Drawing.Point(4, 22);
+            this.file_menu.Name = "file_menu";
+            this.file_menu.Padding = new System.Windows.Forms.Padding(3);
+            this.file_menu.Size = new System.Drawing.Size(527, 230);
+            this.file_menu.TabIndex = 1;
+            this.file_menu.Text = "file_menu";
+            this.file_menu.UseVisualStyleBackColor = true;
+            // 
+            // Overlay9_3
+            // 
+            this.Overlay9_3.Location = new System.Drawing.Point(4, 22);
+            this.Overlay9_3.Name = "Overlay9_3";
+            this.Overlay9_3.Padding = new System.Windows.Forms.Padding(3);
+            this.Overlay9_3.Size = new System.Drawing.Size(544, 268);
+            this.Overlay9_3.TabIndex = 1;
+            this.Overlay9_3.Text = "Overlay9-3";
+            this.Overlay9_3.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Location = new System.Drawing.Point(199, 159);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(8, 8);
+            this.tabControl2.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(568, 392);
-            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Size = new System.Drawing.Size(0, 0);
+            this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(0, 0);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(222, 446);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(342, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Credits to BlueXer0, Zifline, Dario Nieuwenhuis, Pants64ds - Open Beta";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // title_demo
+            // 
+            this.title_demo.Location = new System.Drawing.Point(4, 22);
+            this.title_demo.Name = "title_demo";
+            this.title_demo.Padding = new System.Windows.Forms.Padding(3);
+            this.title_demo.Size = new System.Drawing.Size(527, 230);
+            this.title_demo.TabIndex = 2;
+            this.title_demo.Text = "title_demo";
+            this.title_demo.UseVisualStyleBackColor = true;
+            // 
+            // title_demo_main
+            // 
+            this.title_demo_main.Location = new System.Drawing.Point(4, 22);
+            this.title_demo_main.Name = "title_demo_main";
+            this.title_demo_main.Padding = new System.Windows.Forms.Padding(3);
+            this.title_demo_main.Size = new System.Drawing.Size(527, 230);
+            this.title_demo_main.TabIndex = 3;
+            this.title_demo_main.Text = "title_demo_main";
+            this.title_demo_main.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 465);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbcMainFormTabControl);
             this.Controls.Add(this.ssStatusBar);
             this.Controls.Add(this.tsToolBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "SM64DS Editor vlol";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tsToolBar.ResumeLayout(false);
             this.tsToolBar.PerformLayout();
@@ -1111,9 +1375,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcARM9Overlays)).EndInit();
             this.spcARM9Overlays.ResumeLayout(false);
             this.addons.ResumeLayout(false);
+            this.Code_Patcher.ResumeLayout(false);
+            this.Code_Injection.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.Overlay_Editor.ResumeLayout(false);
+            this.Overlay_Viewer.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.Overlay9_7.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Code_Injection_Enter(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private System.Windows.Forms.Label addonsWarning;
@@ -1219,6 +1497,28 @@
         private System.Windows.Forms.ToolStripMenuItem particleArchiveSPAEditorToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileHeaderToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem soundHeaderToolStripMenuItem;
+        private System.Windows.Forms.TabPage Code_Patcher;
+        private System.Windows.Forms.Button Compile;
+        private System.Windows.Forms.Button Clean;
+        private System.Windows.Forms.GroupBox Code_Injection;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage DL_Patcher;
+        private System.Windows.Forms.TabPage ASM_Patcher;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Clean_DLs;
+        private System.Windows.Forms.Button Compile_DLs;
+        private System.Windows.Forms.TabPage Overlay_Editor;
+        private System.Windows.Forms.GroupBox Overlay_Viewer;
+        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage Overlay9_7;
+        private System.Windows.Forms.TabPage Overlay9_3;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage castle00;
+        private System.Windows.Forms.TabPage file_menu;
+        private System.Windows.Forms.TabPage title_demo;
+        private System.Windows.Forms.TabPage title_demo_main;
     }
 }

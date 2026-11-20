@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SM64DSe</RootNamespace>
-    <AssemblyName>SM64DSe</AssemblyName>
+    <AssemblyName>Extended - Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>app.ico</ApplicationIcon>
     <PublishUrl>publish\</PublishUrl>
