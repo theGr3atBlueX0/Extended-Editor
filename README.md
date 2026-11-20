@@ -24,4 +24,12 @@ Extended Editor is a Fork of SM64DSe that adds a lot of wanted and ease of acces
   This part of the Extended Editor has a Built in GUI Editor meaning you can replace Graphics with images without
   having to do all of that Overlay Hex Editing Stuff. this is also made for ease of access to new comers of the modding scene
 
+# Credits
+- Bluexer0 "Creator and lead dev of Extended editor"
+- Zif "Porting NSMBe and DL code Injection Into the editor
+- Pants64 "For the for of NSMBe with the code injection fix"
+- SplattyDS "For Decompiled Code"
+- Gota7 "Overlay9_7 Decomp"
+and all of the wonderfull people of the SM64DS Hacking Discord
+You guys are the Best!!!
 
