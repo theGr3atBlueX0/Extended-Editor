@@ -1,11 +1,11 @@
-# [Extended Editor]
+# Extended Editor
 
 ![image alt](https://github.com/theGr3atBlueX0/Extended-Editor/blob/1e89c0e2568c2284c502e9c2cfb9191bc874142e/png/Main.PNG)
 Extended Editor is a Fork of SM64DSe that adds a lot of wanted and ease of access features
 
 - This Editor is still in Open Beta and is a Heavy W.I.P
 
-# (Features as of Right Now)
+# "Features as of Right Now"
 - *This will be updated everytime something new gets added so check back on this*
 
 # ASM / DL Code Injector
@@ -17,6 +17,7 @@ Extended Editor is a Fork of SM64DSe that adds a lot of wanted and ease of acces
 
 # GUI Overlay Editor
 ![image alt](https://github.com/theGr3atBlueX0/Extended-Editor/blob/1e89c0e2568c2284c502e9c2cfb9191bc874142e/png/Overlay_Editor.PNG)
+
   This part of the Extended Editor has a Built in GUI Editor meaning you can replace Graphics with images without
   having to do all of that Overlay Hex Editing Stuff. this is also made for ease of access to new comers of the modding scene
 
